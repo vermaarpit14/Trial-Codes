@@ -1,12 +1,22 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Handjet", sans-serif;
+    font-optical-sizing: auto;
+    font-size: large;
+    font-weight: bold;
 }
 
 body {
-    background: #FFE4E1;
+    /* Set up the background image */
+    background: url(https://i.pinimg.com/736x/07/23/67/0723672afa2dadf6c497216e6415d64f.jpg) no-repeat center center fixed;
+    background-size: cover;
+
+    /* Create a dark overlay with blur effect */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,13 +24,45 @@ body {
     padding: 20px;
 }
 
+/* Pseudo-element for the overlay */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* Dark overlay (adjust opacity as needed) */
+    backdrop-filter: blur(5px);
+    /* Blur effect */
+    z-index: -1;
+    /* Place behind content */
+}
+
 .gamecontainer {
+    background: rgba(0, 0, 0, 0.21);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9.6px);
+        -webkit-backdrop-filter: blur(9.6px);
+        border: 1px solid rgba(0, 0, 0, 0.62);
+        /* From https://css.glass */
+        background: rgba(0, 0, 0, 0.21);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9.6px);
+        -webkit-backdrop-filter: blur(9.6px);
+        border: 1px solid rgba(0, 0, 0, 0.62);
     width: 100%;
-    max-width: 800px;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .title {
-    color: #5C6AC4;
+    color: white;
     text-align: center;
     margin-bottom: 20px;
     font-size: 2rem;
@@ -62,130 +104,7 @@ button:hover {
     display: none;
 }
 
-#game_1 {
-    border: 2px solid #5C6AC4;
-    min-height: 60vh;
-    background-color: #7B68EE;
-    border-radius: 10px;
-    padding: 20px;
-}
-
-#quizstart {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 50vh;
-}
-
-#quizcontainer {
-    min-width: 40vh;
-    min-height: 30vh;
-}
-
-#question {
-    background-color: #FFD700;
-    border: 2px solid #5C6AC4;
-    padding: 20px;
-    margin-bottom: 25px;
-    border-radius: 10px;
-    min-height: 20vh;
-}
-
-#choices {
-    background-color: #FFD700;
-    border: 2px solid #5C6AC4;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-#choices li {
-    padding: 10px;
-    margin: 5px 0;
-    background: #B0C4DE;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-#choices li:hover {
-    background: #5C6AC4;
-    color: white;
-}
-
-#result {
-    border: 4px solid #5C6AC4;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    background: white;
-    margin-top: 20px;
-}
-
-#playarea {
-    background-color: #B0C4DE;
-    border: solid 2px #5C6AC4;
-    border-radius: 10px;
-    padding: 20px;
-}
-
-#points {
-    background-color: #F5F5F5;
-    border: solid 2px #5C6AC4;
-    border-radius: 5px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-#snakarea {
-    background-color: #212837;
-    border: solid 1px #5C6AC4;
-    border-radius: 10px;
-    height: 400px;
-    width: 100%;
-    display: grid;
-    grid-template: repeat(30, 1fr)/repeat(30, 1fr);
-}
-
-.meat {
-    background-color: #FF003D;
-    border-radius: 5px;
-}
-
-.head {
-    background-color: #60CBFF;
-    border-radius: 5px;
-}
-
-.buttonarea {
-    display: flex;
-    justify-content: center;
-    margin: 10px 0;
-}
-
-.buttonarea button {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.homess {
-    width: 100% !important;
-    margin: 10px 0 !important;
-}
-
 @media (max-width: 600px) {
-    #snakarea {
-        height: 300px;
-    }
-
     .title {
         font-size: 1.5rem;
     }
@@ -194,6 +113,71 @@ button:hover {
         width: 100px;
     }
 }
-.hidden {
-    display: none !important;
+
+/* ===== Game Over Modal Styles ===== */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 40, 55, 0.9); /* Dark semi-transparent */
+    z-index: 100;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-over-modal {
+    background-color: #B0C4DE;
+    border: 3px solid #5C6AC4;
+    border-radius: 10px;
+    padding: 25px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.game-over-modal h2 {
+    color: #FF003D;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.game-over-modal p {
+    color: #212837;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.modal-buttons button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+
+#playAgain {
+    background-color: #5C6AC4;
+    color: white;
+}
+
+#goHome {
+    background-color: #FFD700;
+    color: #5C6AC4;
+}
+
+.modal-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }

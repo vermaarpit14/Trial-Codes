@@ -13,57 +13,13 @@
 <body>
     <div class="gamecontainer">
         <div id="gamesoption">
-            <h1 class="title">Multi-Game App</h1>
+            <h1 class="title">Multi - <span class="title" style="color: red;">G</span><span class="title" style="color: yellow;">A</span><span class="title" style="color: rgb(109, 226, 255);">M</span><span class="title" style="color: greenyellow;">E</span> App</h1>
             <div class="game-buttons">
-                <button type="button" id="gameone">Quiz Game</button>
-                <button type="button" id="gametwo">Snake Game</button>
-            </div>
-        </div>
-
-        <div id="game_1" class="hidden">
-            <div id="quizcontainer">
-                <h1 class="title">Quiz Game</h1>
-
-                <div id="quizstart">
-                    <button type="button" id="startbutton">Start Quiz</button>
-                </div>
-
-                <div class="hidden" id="questioncontainer">
-                    <h2 id="question"></h2>
-                    <ul id="choices"></ul>
-                </div>
-
-                <div id="result" class="hidden">
-                    <h3>Final Score</h3>
-                    <p id="won"></p>
-                    <button type="button" id="restart">Restart</button>
-                    <button type="button" id="home">Home</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="game_2" class="hidden">
-            <div id="playarea">
-                <h1 class="title">Snake Game</h1>
-                <div id="points">
-                    <span id="scores">Score: 0</span>
-                    <span id="highscore">High Score: 0</span>
-                </div>
-                <div id="snakarea"></div>
-                <div class="buttonarea">
-                    <button type="button" id="up"><i class="fas fa-arrow-up"></i></button>
-                    <button type="button" id="left"><i class="fas fa-arrow-left"></i></button>
-                    <button type="button" id="down"><i class="fas fa-arrow-down"></i></button>
-                    <button type="button" id="right"><i class="fas fa-arrow-right"></i></button>
-                </div>
-                <div>
-                    <button type="button" class="homess" id="homes">Home</button>
-                </div>
+                <button type="button" id="gameone" onclick="window.location.href='quiz.html'">Quiz Game</button>
+                <button type="button" id="gametwo" onclick="window.location.href='snake.html'">Snake Game</button>
             </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,128 @@
+/* snake.css */
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Handjet", sans-serif;
+    font-optical-sizing: auto;
+    font-size: large;
+    font-weight: bold;
+}
+
+body {
+    background: #FFE4E1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+#game_2 {
+    width: 100%;
+    max-width: 500px;
+    /* Reduced from 800px */
+    margin: 0 auto;
+}
+
+#playarea {
+    background-color: #B0C4DE;
+    border: solid 2px #5C6AC4;
+    border-radius: 10px;
+    padding: 15px;
+    /* Reduced padding */
+}
+
+#points {
+    background-color: #F5F5F5;
+    border: solid 2px #5C6AC4;
+    border-radius: 5px;
+    padding: 8px 10px;
+    /* Adjusted padding */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+#snakarea {
+    background-color: #212837;
+    border: solid 1px #5C6AC4;
+    border-radius: 8px;
+    height: 300px;
+    /* Reduced from 400px */
+    width: 100%;
+    display: grid;
+    grid-template: repeat(30, 1fr)/repeat(30, 1fr);
+}
+
+.meat {
+    background-color: #FF003D;
+    border-radius: 3px;
+}
+
+.head {
+    background-color: #60CBFF;
+    border-radius: 3px;
+}
+
+.buttonarea {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    gap: 5px;
+    /* Added gap between buttons */
+}
+
+.buttonarea button {
+    width: 50px;
+    /* Reduced from 60px */
+    height: 50px;
+    font-size: 1.2rem;
+    /* Reduced from 1.5rem */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #5C6AC4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.buttonarea button:hover {
+    background-color: #4A5ABF;
+    /* Simple hover effect */
+}
+
+.homess {
+    width: 100%;
+    margin: 10px 0 0;
+    padding: 10px;
+    background: #5C6AC4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.homess:hover {
+    background-color: #4A5ABF;
+    /* Matching hover effect */
+}
+
+@media (max-width: 600px) {
+    #snakarea {
+        height: 250px;
+        /* Adjusted for mobile */
+    }
+
+    .buttonarea button {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,153 @@
+/* quiz.css */
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Handjet", sans-serif;
+    font-optical-sizing: auto;
+    font-size: large;
+    font-weight: bold;
+}
+
+body {
+    background: #FFE4E1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#game_1 {
+    border: 3px solid #5C6AC4;
+    background-color: #7B68EE;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    /* Further reduced width */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    /* Added margin instead of centering */
+}
+
+.title {
+    color: #FFD700;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    /* Reduced size */
+}
+
+#quizcontainer {
+    width: 100%;
+}
+
+button {
+    border: none;
+    margin: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #5C6AC4;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    /* Reduced size */
+    display: block;
+    /* Make buttons block level */
+    width: calc(100% - 16px);
+    /* Full width accounting for margin */
+}
+
+#question {
+    background-color: #FFD700;
+    border: 2px solid #5C6AC4;
+    padding: 12px;
+    /* Reduced padding */
+    margin-bottom: 12px;
+    border-radius: 8px;
+    color: #5C6AC4;
+    font-size: 1rem;
+    /* Reduced size */
+    line-height: 1.4;
+    /* Better readability */
+}
+
+#choices {
+    background-color: #FFD700;
+    border: 2px solid #5C6AC4;
+    padding: 8px;
+    /* Reduced padding */
+    border-radius: 8px;
+    list-style-type: none;
+}
+
+#choices li {
+    padding: 8px 12px;
+    margin: 6px 0;
+    background: #B0C4DE;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* Added subtle border */
+}
+
+#choices li:hover {
+    background: #9db3d1;
+    /* Softer hover color */
+    transform: none;
+    /* Removed transform to prevent layout shift */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow instead */
+}
+
+#result {
+    border: 3px solid #5C6AC4;
+    padding: 12px;
+    border-radius: 8px;
+    background: white;
+    margin-top: 12px;
+    text-align: center;
+}
+
+#won {
+    font-size: 1rem;
+    margin: 8px 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #game_1 {
+        padding: 15px;
+        max-width: 100%;
+        /* Full width on mobile */
+    }
+
+    .title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    #game_1 {
+        padding: 12px;
+    }
+
+    button {
+        padding: 8px 12px;
+    }
+
+    #question {
+        padding: 10px;
+    }
+}

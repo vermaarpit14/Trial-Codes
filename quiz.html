@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/256/5930/5930147.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body>
+    <div id="game_1">
+        <div id="quizcontainer">
+            <h1 class="title">Quiz Game</h1>
+
+            <div id="quizstart">
+                <button type="button" id="startbutton">Start Quiz</button>
+            </div>
+
+            <div class="hidden" id="questioncontainer">
+                <h2 id="question"></h2>
+                <ul id="choices"></ul>
+            </div>
+
+            <div id="result" class="hidden">
+                <h3>Final Score</h3>
+                <p id="won"></p>
+                <button type="button" id="restart" onclick="window.location.reload()">Restart</button>
+                <button type="button" id="home" onclick="window.location.href='index.html'">Home</button>
+            </div>
+        </div>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+
+</html>

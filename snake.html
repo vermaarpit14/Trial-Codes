@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/256/5930/5930147.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="snake.css">
+</head>
+<body>
+    <div id="game_2">
+        <div id="playarea">
+            <h1 class="title">Snake Game</h1>
+            <div id="points">
+                <span id="scores">Score: 0</span>
+                <span id="highscore">High Score: 0</span>
+            </div>
+            <div id="snakarea"></div>
+            <div class="buttonarea">
+                <button type="button" id="up"><i class="fas fa-arrow-up"></i></button>
+                <button type="button" id="left"><i class="fas fa-arrow-left"></i></button>
+                <button type="button" id="down"><i class="fas fa-arrow-down"></i></button>
+                <button type="button" id="right"><i class="fas fa-arrow-right"></i></button>
+            </div>
+            <div>
+                <button type="button" class="homess" id="homes"
+                    onclick="window.location.href='index.html'">Home</button>
+            </div>
+        </div>
+    </div>
+    <script src="snake.js"></script>
+</body>
+
+</html>

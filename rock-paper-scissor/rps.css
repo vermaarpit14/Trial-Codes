@@ -1,51 +1,46 @@
-body{
+body {
   padding: 25px;
-  background-color: #FFF0F5;
-  
+  background-color: #fff0f5;
 }
 .title {
-	color: #5C6AC4;
+  color: #5c6ac4;
 }
 .container {
   border: solid 0.5px;
- 
+
   min-height: 20vh;
   min-width: 40vh;
   border-radius: 10px;
- background-color:/*#F5F5F5 */ #F8F8FF;
- box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
- 
+  background-color:/*#F5F5F5 */ #f8f8ff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
-#resultarea{
-  display:flex;
- flex-direction: column;
+#resultarea {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   justify-content: center;
   margin-top: 10px;
-  
 }
-#human img{
-  width:10vh;
+#human img {
+  width: 10vh;
   height: 10vh;
   transform: rotate(90deg) rotateY(180deg);
-  
 }
-#computer img{
-  width:10vh;
+#computer img {
+  width: 10vh;
   height: 10vh;
   transform: rotate(-90deg);
 }
-#result{
-  display:flex;
+#result {
+  display: flex;
   text-align: center;
- justify-content: center;
- justify-content: space-around;
- min-height: 20vh;
- min-height: 10vh;
-  
+  justify-content: center;
+  justify-content: space-around;
+  min-height: 20vh;
+  min-height: 10vh;
 }
-#optionarea{
-  display:flex;
+#optionarea {
+  display: flex;
 
   flex-direction: row;
 
@@ -54,17 +49,55 @@ body{
   justify-content: space-around;
   min-height: 30vh;
   flex-direction: end;
- 
 }
-#optionarea img{
-  width:10vh;
-opacity:0.3;
+#optionarea img {
+  width: 10vh;
+  opacity: 0.3;
   height: 10vh;
 }
-#optionarea img:hover{
-  opacity:1;
+#optionarea img:hover {
+  opacity: 1;
 }
-.container{
+.container {
   display: flex;
   flex-direction: column;
 }
+
+#homeButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5C6AC4;
+  font-size: 1.5rem;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+#homeButton:hover {
+  background: #5C6AC4;
+  color: white;
+}
+
+/* Make sure the home button doesn't overlap with content */
+#select, #container, #winner {
+  margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+  #homeButton {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      top: 15px;
+      right: 15px;
+  }
+} 

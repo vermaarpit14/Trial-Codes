@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Finger Cricket</title>
+    <link rel="stylesheet" href="cricket.css" />
+    <link rel="shortcut icon" href="https://cdn-icons-png.freepik.com/512/2160/2160064.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Home Button -->
+    <a href="index.html" id="homeButton">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <div id="select">
+        <img src="https://png.pngtree.com/png-clipart/20241108/original/pngtree-cricket-batsman-hitting-with-bat-transparent-download-png-image_16785014.png"
+            alt="" style="width: 30%; height:10%;" />
+        <h1>FINGER CRICKET</h1>
+
+        <div>
+            <button type="button" id="batting">batting</button>
+            <button type="button" id="bowling">bowling</button>
+        </div>
+    </div>
+    <section id="container" class="hidden">
+        <div id="resultarea">
+            <div id="result">
+                <span id="human">
+                    <img src="https://assets.onecompiler.app/43h26buyk/43h4u2hdq/1000002787.png" alt="" />
+                </span>
+                <span id="computer">
+                    <img src="https://assets.onecompiler.app/43h26buyk/43h4u2hdq/1000002787.png" alt="" />
+                </span>
+            </div>
+            <p id="score"></p>
+        </div>
+        <div id="optionarea">
+            <span>
+                <img src="https://assets.onecompiler.app/43h26buyk/43h4u2hdq/1000002787.png" alt="" />
+                <p>one</p>
+            </span>
+            <span>
+                <img src="https://assets.onecompiler.app/43h26buyk/43h4u2hdq/1000002791.png" alt="" />
+                <p>two</p>
+            </span>
+            <span>
+                <img src="https://assets.onecompiler.app/43h26buyk/43h4u2hdq/1000002786.png" alt="" />
+                <p>three</p>
+            </span>
+            <span>
+                <img src=" https://assets.onecompiler.app/43h26buyk/43h4u2hdq/1000002781.png" alt="" />
+                <p>four</p>
+            </span>
+            <span>
+                <img src="https://assets.onecompiler.app/43h26buyk/43h4u2hdq/1000002785.png " alt="" />
+                <p>five</p>
+            </span>
+        </div>
+    </section>
+    <div id="winner" class="hidden">
+        <p id="champ"></p>
+        <button type="button" id="reset" class="hidden">restart</button>
+    </div>
+    <script src="cricket.js"></script>
+    <!-- Font Awesome for home icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</body>
+
+</html>

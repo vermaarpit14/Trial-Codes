@@ -8,23 +8,117 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="shortcut icon" href="https://thumbs.dreamstime.com/b/natu-194627224.jpg" type="image/x-icon">
     <link rel="stylesheet" href="rps.css" />
+    <style>
+        /* Music Player - Matching home button style */
+        #musicPlayer {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5C6AC4;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        #musicPlayer:hover {
+            background: #5C6AC4;
+            color: white;
+        }
+        
+        /* Home Button (existing style) */
+        #homeButton {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5C6AC4;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        #homeButton:hover {
+            background: #5C6AC4;
+            color: white;
+        }
+        
+        /* Make sure buttons don't overlap with content */
+        .container {
+            margin-top: 80px;
+        }
+        
+        /* Hidden Audio Element */
+        #bgMusic {
+            display: none;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            #musicPlayer, #homeButton {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            #musicPlayer {
+                top: 15px;
+                left: 15px;
+            }
+            
+            #homeButton {
+                top: 15px;
+                right: 15px;
+            }
+            
+            .container {
+                margin-top: 70px;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Music Player -->
+    <div id="musicPlayer">
+        <i class="fas fa-music"></i>
+    </div>
+    
+    <!-- Hidden Audio Element -->
+    <audio id="bgMusic" loop>
+        <!-- Sources will be added by JavaScript -->
+    </audio>
+
     <!-- Home Button -->
     <a href="../index.html" id="homeButton">
         <i class="fas fa-home"></i>
     </a>
+
     <section class="container">
         <div id="resultarea">
             <div id="result">
                 <span id="human">
                     <img src="assets/rock.JPG" alt="" />
-
                 </span>
                 <span id="computer">
                     <img src="assets/rock.JPG" alt="" />
-
                 </span>
             </div>
             <p id="score">you won</p>
@@ -45,6 +139,67 @@
         </div>
     </section>
     <script src="rps.js"></script>
+    <script>
+        // Music player functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const musicPlayer = document.getElementById('musicPlayer');
+            const bgMusic = document.getElementById('bgMusic');
+            const musicIcon = musicPlayer.querySelector('i');
+            
+            // Array of background music tracks (relative paths)
+            const bgmTracks = [
+                "../audios/bgm1.mp3",
+                "../audios/bgm2.mp3",
+                "../audios/bgm3.mp3",
+                "../audios/bgm4.mp3",
+                "../audios/bgm5.mp3",
+                "../audios/bgm6.mp3"
+            ];
+            
+            // Set up audio sources
+            bgmTracks.forEach(track => {
+                const source = document.createElement('source');
+                source.src = track;
+                source.type = 'audio/mpeg';
+                bgMusic.appendChild(source);
+            });
+            
+            // Randomly select a track to start with
+            let currentTrack = Math.floor(Math.random() * bgmTracks.length);
+            bgMusic.src = bgmTracks[currentTrack];
+            
+            // Toggle play/pause
+            musicPlayer.addEventListener('click', function() {
+                if (bgMusic.paused) {
+                    bgMusic.play()
+                        .then(() => {
+                            musicIcon.classList.remove('fa-music');
+                            musicIcon.classList.add('fa-pause');
+                        })
+                        .catch(error => {
+                            console.log('Audio playback failed:', error);
+                        });
+                } else {
+                    bgMusic.pause();
+                    musicIcon.classList.remove('fa-pause');
+                    musicIcon.classList.add('fa-music');
+                }
+            });
+            
+            // When a track ends, play the next one
+            bgMusic.addEventListener('ended', function() {
+                currentTrack = (currentTrack + 1) % bgmTracks.length;
+                bgMusic.src = bgmTracks[currentTrack];
+                bgMusic.play();
+            });
+            
+            // Start with music paused (let user decide to play)
+            bgMusic.pause();
+            
+            // Add margin to prevent content overlap
+            document.querySelector('.container').style.marginTop = '80px';
+        });
+    </script>
 </body>
 
 </html>

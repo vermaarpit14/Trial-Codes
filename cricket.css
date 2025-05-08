@@ -177,27 +177,6 @@ button:hover {
     background-color: #FF5252;
 }
 
-@media (max-width: 600px) {
-    #container, #select, #winner {
-        min-height: 50vh;
-    }
-    
-    #human img, #computer img {
-        width: 8vh;
-        height: 8vh;
-    }
-    
-    #optionarea img {
-        width: 6vh;
-        height: 8vh;
-    }
-    
-    button {
-        padding: 10px;
-        font-size: 1rem;
-    }
-}
-
 /* Home Button Styles */
 #homeButton {
     position: fixed;
@@ -229,6 +208,48 @@ button:hover {
 }
 
 @media (max-width: 600px) {
+    /* Make container wider (95%) with automatic height */
+    #container {
+        width: 95% !important;
+        max-width: 95% !important;
+        min-height: auto !important;
+        padding: 15px !important;
+    }
+
+    /* Option area - keep horizontal but adjust spacing */
+    #optionarea {
+        justify-content: space-evenly !important;
+        padding: 10px 5px !important;
+        min-height: auto !important;
+        gap: 6px !important;
+    }
+
+    /* Make option images smaller but proportional */
+    #optionarea img {
+        width: 11vw !important;
+        height: 13vw !important;
+        max-width: 65px !important;
+        max-height: 75px !important;
+        margin: 0 !important;
+    }
+
+    /* Slightly reduce title size */
+    .title {
+        font-size: 1.7rem !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* Adjust result area spacing */
+    #result {
+        padding: 8px !important;
+        min-height: auto !important;
+    }
+
+    /* Slightly smaller choice icons */
+    #human img, #computer img {
+        width: 6.5vh !important;
+        height: 6.5vh !important;
+    }
     #homeButton {
         width: 40px;
         height: 40px;

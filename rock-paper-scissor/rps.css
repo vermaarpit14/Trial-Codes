@@ -1,103 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Handjet", sans-serif;
+    font-optical-sizing: auto;
+    font-size: large;
+    font-weight: bold;
+}
+
 body {
-  padding: 25px;
-  background-color: #fff0f5;
+    background: #FFE4E1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
-.title {
-  color: #5c6ac4;
-}
-.container {
-  border: solid 0.5px;
 
-  min-height: 20vh;
-  min-width: 40vh;
-  border-radius: 10px;
-  background-color:/*#F5F5F5 */ #f8f8ff;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+#game_2 {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
 }
+
+#playarea {
+    background-color: #B0C4DE;
+    border: solid 2px #5C6AC4;
+    border-radius: 10px;
+    padding: 55px;
+}
+
 #resultarea {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  margin-top: 10px;
+    background-color: #F5F5F5;
+    border: solid 2px #5C6AC4;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-#human img {
-  width: 10vh;
-  height: 10vh;
-  transform: rotate(90deg) rotateY(180deg);
-}
-#computer img {
-  width: 10vh;
-  height: 10vh;
-  transform: rotate(-90deg);
-}
+
 #result {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  justify-content: space-around;
-  min-height: 20vh;
-  min-height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 15px 0;
 }
+
+#human img, #computer img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+#human img {
+    transform: rotate(90deg) rotateY(180deg);
+}
+
+#computer img {
+    transform: rotate(-90deg);
+}
+
+#score {
+    font-size: 1.5rem;
+    color: #5C6AC4;
+    margin: 10px 0;
+}
+
 #optionarea {
-  display: flex;
-
-  flex-direction: row;
-
-  text-align: center;
-  justify-content: center;
-  justify-content: space-around;
-  min-height: 30vh;
-  flex-direction: end;
+    display: flex;
+    justify-content: space-around;
+    padding: 55px;
+    background-color: #F5F5F5;
+    border: solid 2px #5C6AC4;
+    border-radius: 5px;
+    margin-top: 15px;
 }
+
 #optionarea img {
-  width: 10vh;
-  opacity: 0.3;
-  height: 10vh;
+    width: 80px;
+    height: 80px;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
+
 #optionarea img:hover {
-  opacity: 1;
-}
-.container {
-  display: flex;
-  flex-direction: column;
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 #homeButton {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #5C6AC4;
-  font-size: 1.5rem;
-  text-decoration: none;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  transition: all 0.3s ease;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5C6AC4;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
 
 #homeButton:hover {
-  background: #5C6AC4;
-  color: white;
-}
-
-/* Make sure the home button doesn't overlap with content */
-#select, #container, #winner {
-  margin-top: 30px;
+    background: #5C6AC4;
+    color: white;
 }
 
 @media (max-width: 600px) {
-  #homeButton {
-      width: 40px;
-      height: 40px;
-      font-size: 1.2rem;
-      top: 15px;
-      right: 15px;
-  }
-} 
+    #human img, #computer img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    #optionarea img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    #homeButton {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+/* Round selection styling */
+.round-selection {
+  text-align: center;
+  padding: 20px;
+}
+
+.round-selection h3 {
+  color: #5C6AC4;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.round-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.round-btn {
+  padding: 12px 20px;
+  background: #5C6AC4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 200px;
+  max-width: 100%;
+}
+
+.round-btn:hover {
+  background: #4A5ABF;
+  transform: translateY(-2px);
+}
+
+/* Score display styling */
+.human-score, .computer-score {
+  font-weight: bold;
+}
+
+.human-score {
+  font-size: larger;
+  color: #2E7D32;
+}
+
+.computer-score {
+  font-size: larger;
+  color: #C62828;
+}
+
+.separator {
+  margin: 0 30px;
+}
+
+.target {
+  display: block;
+  margin-top: 5px;
+  margin-left: 35%;
+  font-size: 1.1rem;
+  color: #5C6AC4;
+}
+
+/* Game over styling */
+.game-over {
+  text-align: center;
+  padding: 20px;
+}
+
+.game-over h2 {
+  font-size: 1.3rem;
+  color: #5C6AC4;
+  margin-bottom: 10px;
+}
+
+.game-over p {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+#restart-btn {
+  padding: 12px 25px;
+  background: #5C6AC4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#restart-btn:hover {
+  background: #4A5ABF;
+  transform: translateY(-2px);
+}
+
+/* Better way to add spacing */
+.option {
+  margin: 0 5px; /* Adds 20px space on left AND right */
+  padding: 10px; /* Internal spacing */
+}
+
+/* OR if you want space between all options */
+#optionarea {
+  display: flex;
+  gap: 30px; /* Space between all options */
+  justify-content: center;
+}

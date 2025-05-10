@@ -31,34 +31,10 @@
           ><span class="title" style="color: greenyellow">E</span> App
         </h1>
         <div class="game-buttons">
-          <button
-            type="button"
-            id="gameone"
-            onclick="window.location.href='quiz/quiz.html'"
-          >
-            Quiz Game
-          </button>
-          <button
-            type="button"
-            id="gametwo"
-            onclick="window.location.href='snake-game/snake.html'"
-          >
-            Snake Game
-          </button>
-          <button
-            type="button"
-            id="gamethree"
-            onclick="window.location.href='cricket/cricket.html'"
-          >
-            Finger Cricket
-          </button>
-          <button
-            type="button"
-            id="gamefour"
-            onclick="window.location.href='rock-paper-scissor/rps.html'"
-          >
-            Rock Paper Scissors
-          </button>
+          <button type="button" id="gameone">Quiz Game</button>
+          <button type="button" id="gametwo">Snake Game</button>
+          <button type="button" id="gamethree">Finger Cricket</button>
+          <button type="button" id="gamefour">Rock Paper Scissors</button>
         </div>
       </div>
     </div>
@@ -70,6 +46,10 @@
     <!-- Hidden audio element -->
     <audio id="bgMusic" style="display: none"></audio>
 
+    <div id="loaderOverlay" class="hidden">
+      <div class="loader"></div>
+    </div>
     <script src="audio.js"></script>
+    <script src="loader.js"></script>
   </body>
 </html>

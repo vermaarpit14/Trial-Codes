@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissor</title>
+    <link rel="shortcut icon" href="assets/spb-icon.png" type="image/x-icon">
+    <title>Saanp Paani Bandook</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <link rel="shortcut icon" href="assets/rpg-logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="rps.css" />
+    <link rel="stylesheet" href="spb.css" />
     <style>
         /* Music Player - Matching home button style */
         #musicPlayer {
@@ -60,11 +59,6 @@
             color: white;
         }
         
-        /* Make sure buttons don't overlap with content */
-        .container {
-            margin-top: 80px;
-        }
-        
         /* Hidden Audio Element */
         #bgMusic {
             display: none;
@@ -87,15 +81,10 @@
                 top: 15px;
                 right: 15px;
             }
-            
-            .container {
-                margin-top: 70px;
-            }
         }
     </style>
-</head>
-
-<body>
+  </head>
+  <body>
     <!-- Music Player -->
     <div id="musicPlayer">
         <i class="fas fa-music"></i>
@@ -110,24 +99,51 @@
     <a href="../index.html" id="homeButton">
         <i class="fas fa-home"></i>
     </a>
-
+    
     <section class="container">
-        <div id="resultarea">
-            <div id="result">
-                <span id="human">
-                    <img src="assets/rock.png" alt="Your choice" />
-                </span>
-                <span id="computer">
-                    <img src="assets/scissor.png" alt="Computer choice" />
-                </span>
-            </div>
-            <p id="score">Rock, Paper or Scissor</p>
+      <div id="resultarea">
+        <div id="result">
+          <span id="human">
+            <img
+              src="assets/bandook.png"
+              alt=""
+            />
+          </span>
+          <span id="computer">
+            <img
+              src="assets/paani.png"
+              alt=""
+            />
+          </span>
         </div>
-        <div id="optionarea">
-            </div>
-        </div>
+        <p id="score">Saanp Paani Bandook</p>
+        <p id="scorer"></p>
+      </div>
+      <div id="optionarea">
+        <span>
+          <img
+            src="assets/saanp.png"
+            alt=""
+          />
+          <p>saanp</p>
+        </span>
+        <span>
+          <img
+            src="assets/paani.png"
+            alt=""
+          />
+          <p>paani</p>
+        </span>
+        <span>
+          <img
+            src="assets/bandook.png"
+            alt=""
+          />
+          <p>bandook</p>
+        </span>
+      </div>
     </section>
-    <script src="rps.js"></script>
+    <script src="spb.js"></script>
     <script>
         // Music player functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -184,11 +200,7 @@
             
             // Start with music paused (let user decide to play)
             bgMusic.pause();
-            
-            // Add margin to prevent content overlap
-            document.querySelector('.container').style.marginTop = '80px';
         });
     </script>
-</body>
-
+  </body>
 </html>

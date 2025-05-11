@@ -15,9 +15,9 @@ let gameState = {
 
 // Game options
 const optionsData = [
-  { src: "assets/rock.JPG", value: "R" },
-  { src: "assets/paper.JPG", value: "P" },
-  { src: "assets/scissor.JPG", value: "S" },
+  { src: "assets/rock.png", value: "R" },
+  { src: "assets/paper.png", value: "P" },
+  { src: "assets/scissor.png", value: "S" },
 ];
 
 // Create round selection buttons

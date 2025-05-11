@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         gametwo: "snake-game/snake.html",
         gamethree: "cricket/cricket.html",
         gamefour: "rock-paper-scissor/rps.html",
+        gamefive: "saanp-paani-bandook/spb.html",
       };
       handleGameSelection(e, gameUrls[this.id]);
     });

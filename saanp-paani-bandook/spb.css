@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Handjet", sans-serif;
+    font-optical-sizing: auto;
+    font-size: large;
+    font-weight: bold;
+}
+
+body {
+    background: #FFE4E1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background-color: #B0C4DE;
+    border: solid 2px #5C6AC4;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#resultarea {
+    background-color: #F5F5F5;
+    border: solid 2px #5C6AC4;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#result {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 15px 0;
+}
+
+#human img, #computer img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+#computer img{
+  transform: rotateY(180deg);
+}
+
+#score {
+    font-size: 1.5rem;
+    color: #5C6AC4;
+    margin: 10px 0;
+}
+
+#scorer {
+    font-size: 1.2rem;
+    color: #5C6AC4;
+}
+
+#optionarea {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #F5F5F5;
+    border: solid 2px #5C6AC4;
+    border-radius: 5px;
+    margin-top: 15px;
+    gap: 20px;
+}
+
+#optionarea img {
+    width: 80px;
+    height: 80px;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#optionarea img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+#optionarea p {
+    text-align: center;
+    color: #5C6AC4;
+    margin-top: 5px;
+}
+
+/* Animation styles */
+#human.start {
+    transform-origin: center;
+    animation: humanshake 1s infinite;
+}
+
+#computer.start {
+    transform-origin: center;
+    animation: compshake 1s infinite;
+}
+
+@keyframes humanshake {
+    50% {
+        transform: rotate(90deg)  rotate(15deg);
+    }
+}
+
+@keyframes compshake {
+    50% {
+        transform: rotate(-90deg) rotate(-15deg);
+    }
+}
+
+/* Music Player Styles */
+#musicPlayer {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5C6AC4;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#musicPlayer:hover {
+    background: #5C6AC4;
+    color: white;
+}
+
+#homeButton {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5C6AC4;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+#homeButton:hover {
+    background: #5C6AC4;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    #human img, #computer img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    #optionarea img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    #homeButton, #musicPlayer {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    #homeButton {
+        top: 15px;
+        right: 15px;
+    }
+    
+    #musicPlayer {
+        top: 15px;
+        left: 15px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    #optionarea {
+        padding: 15px;
+        gap: 10px;
+    }
+}
+
+/* Score display styling */
+.human-score, .computer-score {
+    font-weight: bold;
+}
+
+.human-score {
+    color: #2E7D32;
+}
+
+.computer-score {
+    color: #C62828;
+}
+
+.separator {
+    margin: 0 10px;
+}
